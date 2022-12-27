@@ -12,7 +12,7 @@ import java.util.Date;
 @Component
 public class JwtProvider {
     private String jwtSecret = "levancuong";
-    private int jwtExpired = 86400;
+    private int jwtExpired = 864000000;
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtProvider.class);
     public String createToken(Authentication authentication){
         UserPrinciple userPrinciple = (UserPrinciple) authentication.getPrincipal();

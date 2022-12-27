@@ -20,13 +20,13 @@ public abstract class AbstractEntity implements Serializable {
     private Date regDate;
     @CreatedBy
     @Column(name = "regAccount")
-    private Long regAccount;
+    private String regAccount;
     @LastModifiedDate
     @Column(name = "modDate")
     private Date modDate;
     @LastModifiedBy
     @Column(name = "modAccount")
-    private Long modAccount;
+    private String modAccount;
     @Column(name = "delFlag")
     private Boolean delFlag = false;
 
@@ -46,11 +46,11 @@ public abstract class AbstractEntity implements Serializable {
         this.regDate = regDate;
     }
 
-    public Long getRegAccount() {
+    public String getRegAccount() {
         return regAccount;
     }
 
-    public void setRegAccount(Long regAccount) {
+    public void setRegAccount(String regAccount) {
         this.regAccount = regAccount;
     }
 
@@ -62,11 +62,11 @@ public abstract class AbstractEntity implements Serializable {
         this.modDate = modDate;
     }
 
-    public Long getModAccount() {
+    public String getModAccount() {
         return modAccount;
     }
 
-    public void setModAccount(Long modAccount) {
+    public void setModAccount(String modAccount) {
         this.modAccount = modAccount;
     }
 
