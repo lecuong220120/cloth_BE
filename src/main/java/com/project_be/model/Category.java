@@ -12,6 +12,40 @@ public class Category extends AbstractEntity{
     private String categoryName;
     @Column(name = "description")
     private String description;
+    @Column(name = "image")
+    private String image;
+    @ManyToOne
+    @JoinColumn(name = "parent_categoty_id", nullable = false)
+    private ParentCategory parentCategory;
+    public String getImage() {
+        return image;
+    }
+
+    public Category(Long id, String categoryName, String description, String image, ParentCategory parentCategory) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.description = description;
+        this.image = image;
+        this.parentCategory = parentCategory;
+    }
+
+    public Category(String categoryName, String description, ParentCategory parentCategory) {
+        this.categoryName = categoryName;
+        this.description = description;
+        this.parentCategory = parentCategory;
+    }
+
+    public ParentCategory getParentCategory() {
+        return parentCategory;
+    }
+
+    public void setParentCategory(ParentCategory parentCategory) {
+        this.parentCategory = parentCategory;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public Long getId() {
         return id;
