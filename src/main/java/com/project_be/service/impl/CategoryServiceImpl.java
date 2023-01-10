@@ -26,4 +26,8 @@ public class CategoryServiceImpl implements CategoryService {
     public Category save(Category category) {
         return categoryRepository.save(category);
     }
+
+    public List<Category> findAllById(Long id) {
+        return categoryRepository.findAllById(id);
+    }
 }

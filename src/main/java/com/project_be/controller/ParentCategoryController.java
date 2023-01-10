@@ -8,14 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/parentcategory")
 public class ParentCategoryController {
     @Autowired
     ParentCategoryService parentCategoryService;
     @GetMapping
     public ResponseEntity<?> getAllParentCategory(){
-
-        return new ResponseEntity<>(parentCategoryService.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(parentCategoryService.getParentCatgory(), HttpStatus.OK);
     }
     @PostMapping
     public ResponseEntity<?> save(@RequestBody ParentCategory parentCategory){

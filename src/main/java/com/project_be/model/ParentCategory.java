@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "parent_categoy")
+@Table(name = "parent_category")
 public class ParentCategory extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

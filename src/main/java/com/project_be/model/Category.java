@@ -1,5 +1,7 @@
 package com.project_be.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,8 +16,9 @@ public class Category extends AbstractEntity{
     private String description;
     @Column(name = "image")
     private String image;
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "parent_categoty_id", nullable = false)
+    @JoinColumn(name = "parent_category_id", nullable = false)
     private ParentCategory parentCategory;
     public String getImage() {
         return image;
